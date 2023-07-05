@@ -16,11 +16,21 @@
                         <div class="card-body">
                             <div class="mb-3">
                                 <label for="id" class="form-label">Rut</label>
-                                <input type="text" class="form-control" name="rut_cliente" id="rut_cliente" value="<?php echo $rut_cliente;?>"  aria-describedby="helpId" placeholder="ID">
+                                <input type="text"
+                                        class="form-control"
+                                        name="rut_cliente" 
+                                        id="rut_cliente" 
+                                        value="<?php echo $rut_cliente;?>"
+                                        aria-describedby="helpId" placeholder="ID">
                             </div>
                             <div class="mb-3">
                                 <label for="nombre_cliente" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" name="nombre_cliente" id="nombre_cliente" aria-describedby="helpId" placeholder="Nombre completo">
+                                <input type="text" 
+                                        class="form-control" 
+                                        name="nombre_cliente" 
+                                        id="nombre_cliente" 
+                                        value ="<?php echo $nombre_cliente;?>"
+                                        aria-describedby="helpId" placeholder="Nombre completo">
 
                             </div>
 

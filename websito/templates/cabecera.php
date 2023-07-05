@@ -19,6 +19,7 @@
                     <a class="nav-item nav-link active" href="index.php">Inicio </a>
                     <a class="nav-item nav-link" href="transacciones.php">Transacciones</a>
                     <a class="nav-item nav-link" href="Clientes.php">Clientes</a>
+                    <a class="nav-item nav-link" href="Cuentas.php">Cuentas</a>
                     <a class="nav-item nav-link" href="Historial.php">Historial</a>
                 </div>
             </nav>
