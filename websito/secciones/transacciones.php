@@ -49,14 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $consulta_actualizar_saldo_cobra->bindParam(':cta_cobra', $cta_cobra);
         $consulta_actualizar_saldo_cobra->execute();
 
-        // 5. Guardar la transacción en la tabla de transacciones
-        $sql_guardar_transaccion = "INSERT INTO transacciones (cta_paga_transa, cta_cobra_transa, monto_transa, fecha_transa) VALUES (:cta_paga, :cta_cobra, :monto, NOW())";
-        $consulta_guardar_transaccion = $conexionBD->prepare($sql_guardar_transaccion);
-        $consulta_guardar_transaccion->bindParam(':cta_paga', $cta_paga);
-        $consulta_guardar_transaccion->bindParam(':cta_cobra', $cta_cobra);
-        $consulta_guardar_transaccion->bindParam(':monto', $monto);
-        $consulta_guardar_transaccion->execute();
-
         echo "Transacción realizada con éxito";
       } else {
   
@@ -72,29 +64,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 ?>
-
-<div class="container">
+<div class="container" style="background-color: #EEEDDE; color: #141E27; padding: 20px; border: 1px solid #203239;">
   <h1>Realizar transacciones</h1>
   <form action="transacciones.php" method="post">
     <div class="mb-3">
       <label for="cta_paga">Cuenta a pagar</label>
-      <input type="text" class="form-control" name="cta_paga" id="cta_paga" placeholder="Cuenta a pagar">
+      <input type="text" class="form-control" name="cta_paga" id="cta_paga" placeholder="Cuenta a pagar" style="background-color: #F2EAD3; color: #141E27;">
     </div>
     <div class="mb-3">
       <label for="cta_cobra">Cuenta a cobrar</label>
-      <input type="text" class="form-control" name="cta_cobra" id="cta_cobra" placeholder="Cuenta a cobrar">
+      <input type="text" class="form-control" name="cta_cobra" id="cta_cobra" placeholder="Cuenta a cobrar" style="background-color: #F2EAD3; color: #141E27;">
     </div>
     <div class="mb-3">
       <label for="monto">Monto</label>
-      <input type="text" class="form-control" name="monto" id="monto" placeholder="Monto">
-</div>
-<button type="submit" class="btn btn-primary">Realizar transacción</button>
-
+      <input type="text" class="form-control" name="monto" id="monto" placeholder="Monto" style="background-color: #F2EAD3; color: #141E27;">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block" style="background-color: #3F2305; color: #F5F5F5;">Realizar transacción</button>
   </form>
   <?php if (isset($mensaje)) : ?>
     <div class="mt-3">
-  <?php echo $mensaje; ?>
-</div>
-<?php endif; ?>
+      <?php echo $mensaje; ?>
+    </div>
+  <?php endif; ?>
 </div>
 <?php include("../templates/pie.php"); ?>
