@@ -55,19 +55,19 @@
         <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'active' : ''; ?>" href="index.php">Inicio</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'transacciones.php') ? 'active' : ''; ?>" href="transacciones.php">Transacciones</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'Clientes.php') ? 'active' : ''; ?>" href="Clientes.php">Clientes</a>
       </li>
       <li class="nav-item">
         <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'Cuentas.php') ? 'active' : ''; ?>" href="Cuentas.php">Cuentas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'Historial.php') ? 'active' : ''; ?>" href="Historial.php">Historial</a>
+        <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'transacciones.php') ? 'active' : ''; ?>" href="transacciones.php">Transacciones</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'abyret.php') ? 'active' : ''; ?>" href="abyret.php">Abonos y Retiros</a>
+        <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'abyret.php') ? 'active' : ''; ?>" href="abyret.php">Abono o Retiro</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'Historial.php') ? 'active' : ''; ?>" href="Historial.php">Historial</a>
       </li>
     </ul>
   </div>
