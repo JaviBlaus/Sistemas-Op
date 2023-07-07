@@ -49,6 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $consulta_actualizar_saldo_cobra->bindParam(':cta_cobra', $cta_cobra);
         $consulta_actualizar_saldo_cobra->execute();
 
+        // Registrar la transacción en la tabla de transacciones
+        $insertarTransaccion = $conexionBD->prepare("INSERT INTO transacciones (cta_paga_transa, cta_cobra_transa, monto_transa, fecha_transa) VALUES (:cta_paga, :cta_cobra, :monto, NOW())");
+        $insertarTransaccion->bindParam(':cta_paga', $cta_paga);
+        $insertarTransaccion->bindParam(':cta_cobra', $cta_cobra);
+        $insertarTransaccion->bindParam(':monto', $monto);
+        $insertarTransaccion->execute();
+
         echo "Transacción realizada con éxito";
       } else {
   
@@ -69,15 +76,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <form action="transacciones.php" method="post">
     <div class="mb-3">
       <label for="cta_paga">Cuenta a pagar</label>
-      <input type="text" class="form-control" name="cta_paga" id="cta_paga" placeholder="Cuenta a pagar" style="background-color: #F2EAD3; color: #141E27;">
+      <input type="text" class="form-control" name="cta_paga" id="cta_paga" required placeholder="Cuenta a pagar" style="background-color: #F2EAD3; color: #141E27;">
     </div>
     <div class="mb-3">
       <label for="cta_cobra">Cuenta a cobrar</label>
-      <input type="text" class="form-control" name="cta_cobra" id="cta_cobra" placeholder="Cuenta a cobrar" style="background-color: #F2EAD3; color: #141E27;">
+      <input type="text" class="form-control" name="cta_cobra" id="cta_cobra" required placeholder="Cuenta a cobrar" style="background-color: #F2EAD3; color: #141E27;">
     </div>
     <div class="mb-3">
       <label for="monto">Monto</label>
-      <input type="text" class="form-control" name="monto" id="monto" placeholder="Monto" style="background-color: #F2EAD3; color: #141E27;">
+      <input type="text" class="form-control" name="monto" id="monto" required placeholder="Monto" style="background-color: #F2EAD3; color: #141E27;">
     </div>
     <button type="submit" class="btn btn-primary btn-block" style="background-color: #3F2305; color: #F5F5F5;">Realizar transacción</button>
   </form>
