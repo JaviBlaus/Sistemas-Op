@@ -18,82 +18,14 @@ $consulta->execute();
 $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!doctype html>
-<html lang="en">
-
-<head>
-  <title>Title</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-  <style>
-    body {
-      background-color: #F5F5F5;
-      color: #141E27;
-    }
-
-    .container {
-      background-color: #EEEDDE;
-      border: 1px solid #203239;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #3F2305;
-    }
-
-    input.form-control {
-      background-color: #F2EAD3;
-      border: 1px solid #141E27;
-      color: #141E27;
-    }
-
-    button.btn.btn-primary {
-      background-color: #3F2305;
-      border-color: #3F2305;
-    }
-
-    table.table {
-      background-color: #E0DDAA;
-      border: 1px solid #203239;
-    }
-
-    a.nav-link {
-      background-color: #F2EAD3;
-      color: #141E27;
-    }
-
-    a.nav-link:hover,
-    a.nav-link.active {
-      background-color: #EEEDDE;
-      color: #141E27;
-    }
-
-    .table th {
-      background-color: #DFD7BF;
-      color: #141E27;
-    }
-
-    .table td {
-      background-color: #F2EAD3;
-      color: #141E27;
-    }
-  </style>
-</head>
-
 <body>
   <div class="container">
     <h1>Buscar transacciones por cuenta</h1>
 
     <form action="Historial.php" method="GET" class="mb-3">
       <div class="input-group">
-        <input type="text" class="form-control" name="cuenta" placeholder="Número de cuenta">
-        <button class="btn btn-primary" type="submit">Buscar</button>
+        <input type="text" class="form-control" name="cuenta" placeholder="Número de cuenta" style="background-color: #F2EAD3; color: #141E27;">
+        <button class="btn btn-primary" type="submit" style="background-color: #3F2305; color: #F5F5F5;">Buscar</button>
       </div>
     </form>
   </div>
